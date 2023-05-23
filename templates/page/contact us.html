@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block about %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+</head>
+    <br>
+    <h1 style="color: rgba(0,0,0,.6);
+    background: #e4e3e3;
+    text-shadow: 3px 2px 3px rgba(255,255,255,.2); margin: 15px; text-align: center; height: 30px;">CONTACT FORM </h1><br>
+
+    <form id="form" action="{% url 'contact us'%}" method="post">
+        {% csrf_token %}
+    <label>name</label>
+    <div class="row g-3">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="firstname" id="firstname">
+        </div>
+        <label>email</label><br>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="e-mail" aria-label="e-mail" name="email" id="email">
+        </div>
+      </div>
+    <br><label>topic</label><br>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="topic" id="topic" placeholder="topic">
+      </div>
+    <label>message:</label><br>
+    <div class="mb-3">
+    <textarea type="text" class="form-control" name="message" id="message" placeholder="write your message"></textarea>
+      </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
+      </div>
+
+    </form>
+
+</body>
+</html>
+{% endblock %}
